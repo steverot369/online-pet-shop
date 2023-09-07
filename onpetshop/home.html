@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pet shop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <img src="images/logo2.png" class="logo">
+            <!-- <img src="images/menu-icon.png" class="menu-icon"> -->
+
+        </div>
+        <div class="row">
+            <div class="left-col">
+                <div class="content">
+                    <h1><span>colors</span> are smiles of nature</h1>
+                <p>int nature,light creates the colors.In the picture,color c
+                    <br>creates the lights</p>
+                    <div class="arrow">
+                        <img src="images/arrow.png">
+                    </div>
+                    <img src="images/art.png" class="art">
+                </div>
+   
+            </div>
+            <div class="right-col">
+                <img src="images/pic1.png" id="picture">
+            </div>
+
+        </div>
+        <div class="controller">
+            <ul>
+                <li class="active btn">01</li>
+                <li class="btn">02</li>
+                <li class="btn">03</li>
+                <li class="btn">04</li>
+
+            </ul>
+        </div>
+    </div>
+    <div id="sidenav">
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="login.php">Login</a></li>
+                <li><a href="custreg.php">Register</a></li>
+                <li><a href="#">about us</a></li>
+
+            </ul>
+        </nav>
+        <div id="menu-btn">
+            <img src="images/menu-icon.png" id="menu">
+        </div>
+    </div>
+    <script>
+        var btn=document.getElementsByClassName("btn");
+        // var picture=document.getElementById("picture");
+        for(let i=0;i<btn.length;i++){
+            btn[i].addEventListener('click', function(){
+                let current = document.getElementsByClassName("active");
+                current[0].className=current[0].className.replace("active", "");
+                this.className += " active";
+            });
+        }
+        btn[0].onclick=function(){
+            picture.src="images/pic1.png"
+        }
+        btn[1].onclick=function(){
+            picture.src="images/picc2.png"
+        }
+        btn[2].onclick=function(){
+            picture.src="images/picc3.png"
+        }
+        btn[3].onclick=function(){
+            picture.src="images/picc4.png"
+        }
+
+
+
+
+        // menu icon
+
+        var menubtn = document.getElementById("menu-btn");
+        var sidenav = document.getElementById("sidenav");
+        var menu = document.getElementById("menu");
+        sidenav.style.right="-250px";
+        menubtn.onclick = function(){
+            if(sidenav.style.right == "-250px"){
+                sidenav.style.right = "0";
+                menu.src="images/close.png";
+            }
+            else{
+                sidenav.style.right = "-250px";
+                menu.src="images/menu-icon.png";
+
+            }
+        }
+    </script>
+</body>
+</html>
